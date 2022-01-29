@@ -10,8 +10,19 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
+    <header class="header">
+      <img src="images/logo.svg" alt="Splitter." class="logo" />
+    </header>
     <main class="main">
       <h1 class="sr-only">Time Tracking App</h1>
 
@@ -19,21 +30,27 @@
         <!-- calculating-area -->
         <h2 class="sr-only">Calculating Area</h2>
         <section class="calculating-area">
-          <form action="" class="bill-form">
+          <form action="" class="form">
             <label for="bill">Bill</label>
-            <div class="input-container">
-              <input type="number" id="bill" name="bill" placeholder="0" />
+            <div class="bill-input-container">
+              <input
+                type="number"
+                id="bill"
+                name="bill"
+                placeholder="0"
+                class="form__input"
+              />
             </div>
           </form>
 
-          <div class="tip-selection-title" id="tip-selection-label">
-            Select Tip %
-          </div>
           <div
             class="tip-selection"
             role="group"
             aria-labelledby="tip-selection-label"
           >
+            <div class="tip-selection__title" id="tip-selection-label">
+              Select Tip %
+            </div>
             <ul class="tip-selection__list">
               <li class="tip-selection__item">
                 <button class="tip-selection__btn">5%</button>
@@ -53,23 +70,25 @@
               <li class="tip-selection__item">
                 <label for="custom-tip" class="sr-only">Custom Tip</label>
                 <input
-                  type="text"
+                  type="number"
                   name="custom-tip"
                   id="custom-tip"
                   placeholder="Custom"
+                  class="custom-tip-input"
                 />
               </li>
             </ul>
           </div>
 
-          <form action="" class="people-form">
+          <form action="" class="form">
             <label for="num-of-people">Number of People</label>
-            <div class="input-container">
+            <div class="people-input-container">
               <input
                 type="number"
                 id="num-of-people"
                 name="num-of-people"
                 placeholder="0"
+                class="form__input"
               />
             </div>
           </form>
@@ -79,32 +98,26 @@
         <!-- result-area -->
         <section class="result-area">
           <h2 class="sr-only">Result Area</h2>
-          <div class="tip-amount" aria-label="Tip Amount">
-            <h3 class="tip-amount__heading">
-              <span class="tip-amount__heading--big">Tip Amount</span>
-              <span class="tip-amount__heading--small">/ person</span>
+          <div class="result-area__tip-amount" aria-label="Tip Amount">
+            <h3 class="result-area__heading">
+              <span class="result-area__heading--big">Tip Amount</span>
+              <span class="result-area__heading--small">/ person</span>
             </h3>
-            <p class="tip-amount__number">0</p>
+            <p class="result-area__number js-tip-amount">0</p>
           </div>
 
-          <div class="total-amount" aria-label="Total Amount">
-            <h3 class="total-amount__heading">
-              <span class="total-amount__heading--big">Total Amount</span>
-              <span class="total-amount__heading--small">/ person</span>
+          <div class="result-area__total-amount" aria-label="Total Amount">
+            <h3 class="result-area__heading">
+              <span class="result-area__heading--big">Total Amount</span>
+              <span class="result-area__heading--small">/ person</span>
             </h3>
-            <p class="total-amount__number">0</p>
+            <p class="result-area__number">0</p>
           </div>
 
-          <button class="reset-btn">Reset</button>
+          <button class="reset-btn" disabled>Reset</button>
         </section>
         <!-- / result-area -->
       </div>
     </main>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Chrisvn188</a>.
-    </div>
   </body>
 </html>
