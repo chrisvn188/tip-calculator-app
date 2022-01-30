@@ -30,7 +30,7 @@
         <!-- calculating-area -->
         <h2 class="sr-only">Calculating Area</h2>
         <section class="calculating-area">
-          <form action="" class="form">
+          <form action="" class="form" id="bill-form">
             <label for="bill">Bill</label>
             <div class="bill-input-container">
               <input
@@ -53,19 +53,19 @@
             </div>
             <ul class="tip-selection__list">
               <li class="tip-selection__item">
-                <button class="tip-selection__btn">5%</button>
+                <button class="tip-selection__btn" data-tip="0.05">5%</button>
               </li>
               <li class="tip-selection__item">
-                <button class="tip-selection__btn">10%</button>
+                <button class="tip-selection__btn" data-tip="0.1">10%</button>
               </li>
               <li class="tip-selection__item">
-                <button class="tip-selection__btn">15%</button>
+                <button class="tip-selection__btn" data-tip="0.15">15%</button>
               </li>
               <li class="tip-selection__item">
-                <button class="tip-selection__btn">25%</button>
+                <button class="tip-selection__btn" data-tip="0.25">25%</button>
               </li>
               <li class="tip-selection__item">
-                <button class="tip-selection__btn">50%</button>
+                <button class="tip-selection__btn" data-tip="0.5">50%</button>
               </li>
               <li class="tip-selection__item">
                 <label for="custom-tip" class="sr-only">Custom Tip</label>
@@ -80,7 +80,7 @@
             </ul>
           </div>
 
-          <form action="" class="form">
+          <form action="" class="form" id="num-of-people-form">
             <label for="num-of-people">Number of People</label>
             <div class="people-input-container">
               <input
@@ -90,6 +90,7 @@
                 placeholder="0"
                 class="form__input"
               />
+              <p class="form__error">blablabla</p>
             </div>
           </form>
         </section>
@@ -103,7 +104,7 @@
               <span class="result-area__heading--big">Tip Amount</span>
               <span class="result-area__heading--small">/ person</span>
             </h3>
-            <p class="result-area__number js-tip-amount">0</p>
+            <p class="result-area__number js-tip-amount">$0.00</p>
           </div>
 
           <div class="result-area__total-amount" aria-label="Total Amount">
@@ -111,10 +112,10 @@
               <span class="result-area__heading--big">Total Amount</span>
               <span class="result-area__heading--small">/ person</span>
             </h3>
-            <p class="result-area__number">0</p>
+            <p class="result-area__number js-total-amount">$0.00</p>
           </div>
 
-          <button class="reset-btn" disabled>Reset</button>
+          <button class="reset-btn">Reset</button>
         </section>
         <!-- / result-area -->
       </div>

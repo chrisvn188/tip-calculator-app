@@ -54,6 +54,11 @@ input[type='number'] {
 input:focus::placeholder {
   color: transparent;
 }
+
+input.has-error {
+  outline: 2px solid red;
+}
+
 .header {
   padding: 2em;
   text-align: center;
@@ -120,7 +125,7 @@ input:focus::placeholder {
   content: url(images/icon-dollar.svg);
   display: inline-block;
   position: absolute;
-  left: 1.5em;
+  left: 1em;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -129,7 +134,7 @@ input:focus::placeholder {
   content: url(images/icon-person.svg);
   display: inline-block;
   position: absolute;
-  left: 1.5em;
+  left: 1em;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -151,6 +156,19 @@ input:focus::placeholder {
 
 .form__input::placeholder {
   color: var(--color-dark-grayish-cyan-2);
+}
+
+.form__error {
+  position: absolute;
+  top: -1.5em;
+  right: 0;
+  color: red;
+  font-size: 0.85rem;
+  display: none;
+}
+
+.form__error.active {
+  display: block;
 }
 
 .tip-selection__title {
@@ -198,7 +216,8 @@ input:focus::placeholder {
   cursor: pointer;
 }
 
-.tip-selection__btn:hover {
+.tip-selection__btn:hover,
+.tip-selection__btn.active {
   background-color: var(--color-strong-cyan);
   color: var(--color-very-dark-cyan);
 }
@@ -291,6 +310,7 @@ input:focus::placeholder {
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
