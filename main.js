@@ -7,6 +7,10 @@ const billForm = getElement('#bill-form');
 const numOfPeopleForm = getElement('#num-of-people-form');
 const resetBtn = getElement('.reset-btn');
 const tipBtns = document.querySelectorAll('.tip-selection__btn');
+// check empty input
+const emptyPattern = /^\s*$/;
+// check if input is 0
+const zeroPattern = /^0([-.]?0+)*$/;
 
 // default states
 let currentBill = 0;
@@ -100,8 +104,9 @@ tipBtns.forEach(element => {
   element.addEventListener('click', e => {
     tipBtns.forEach(el => removeClass.call(el, 'active'));
     setClass.call(e.target, 'active');
-    currentTip = +e.target.dataset.tip;
-    if (currentNumberOfPeople === 0) return;
+    currentTip = +e.target.dataset.tip; // convert string type to number
+    if (currentNumberOfPeople === 0 || emptyPattern.test(numberOfPeople))
+      return;
     updateResult();
   });
 });
@@ -109,7 +114,7 @@ tipBtns.forEach(element => {
 bill.addEventListener('input', e => {
   e.preventDefault();
   currentBill = +bill.value;
-  if (currentNumberOfPeople === 0) return;
+  if (currentNumberOfPeople === 0 || emptyPattern.test(numberOfPeople)) return;
   updateResult();
 });
 
@@ -118,19 +123,19 @@ numberOfPeople.addEventListener('input', e => {
   activate(resetBtn);
   const errorMessage = numberOfPeople.nextElementSibling;
 
-  const emptyPattern = /^\s*$/;
   if (emptyPattern.test(numberOfPeople.value)) {
     errorMessage.innerHTML = `Can't be empty!`;
     setClass.call(errorMessage, 'active');
     setClass.call(numberOfPeople, 'has-error');
+    currentNumberOfPeople = 0;
     resetResultText();
   }
 
-  const zeroPattern = /^0([-.]?0+)*$/;
   if (zeroPattern.test(numberOfPeople.value)) {
     errorMessage.innerHTML = `Can't be zero!`;
     setClass.call(errorMessage, 'active');
     setClass.call(numberOfPeople, 'has-error');
+    currentNumberOfPeople = 0;
     resetResultText();
   }
 
