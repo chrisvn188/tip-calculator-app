@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -16,23 +15,94 @@
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
-    <header>
+    <header class="padding-medium">
       <div class="logo">
         <img src="./images/logo.svg" alt="Splitter - Tip Calculator" />
       </div>
     </header>
     <main>
       <h1 class="visually-hidden">Tip Calculator</h1>
+      <div class="[ calculator ] [ padding-medium ]">
+        <div class="[ calculator__inputs flow ]">
+          <div class="calculator__bill flow-xs">
+            <h2>Bill</h2>
+            <input
+              class="padding-xs text-right round-sm text-md"
+              type="number"
+              value="142.55" />
+          </div>
+
+          <div class="[ calculator__tips ] [ flow-sm ]">
+            <h2>Select Tip %</h2>
+            <div class="[ tip__percentages ] grid-2cols gap-sm">
+              <button
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                5%
+              </button>
+              <button
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                10%
+              </button>
+              <button
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                15%
+              </button>
+              <button
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                25%
+              </button>
+              <button
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                50%
+              </button>
+              <input
+                class="padding-xs text-right round-sm"
+                type="number"
+                required
+                placeholder="Custom" />
+            </div>
+          </div>
+
+          <div class="[ calculator__people-num ] [ flow-xs ]">
+            <h2>Number of People</h2>
+            <input
+              class="padding-xs text-right round-sm"
+              type="number"
+              value="5" />
+          </div>
+        </div>
+
+        <div
+          class="[ calculator__outputs ] [ padding-regular flex flex-column gap-r round-lg ]">
+          <div
+            class="[ calculator__tip-amount-text ] [ flex content-between items-center ]">
+            <h2 class="calculator__output-text">
+              <span class="block">Tip Amount</span>
+              <span class="text-xs block">/ person</span>
+            </h2>
+            <div class="[ calculator__output-number ] [ text-lg ]">$4.27</div>
+          </div>
+          <div
+            class="[ calculator__total-text ] [ flex content-between items-center ]">
+            <h2 class="calculator__output-text">
+              <span class="block">Total</span>
+              <span class="text-xs block">/ person</span>
+            </h2>
+            <div class="[ calculator__output-number ] [ text-lg ]">$32.79</div>
+          </div>
+          <button
+            class="[ calculator__reset ] [ text-center text-uppercase padding-xs round-sm ]">
+            Reset
+          </button>
+        </div>
+      </div>
     </main>
 
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset
-
-    <div class="attribution">
+    <footer class="[ attribution ] [ padding-regular text-center text-xs ]">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </footer>
   </body>
 </html>
