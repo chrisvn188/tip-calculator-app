@@ -26,33 +26,35 @@
         <div class="[ calculator__inputs flow ]">
           <div class="calculator__bill flow-xs">
             <h2>Bill</h2>
-            <input
-              class="padding-xs text-right round-sm text-md"
-              type="number"
-              value="142.55" />
+            <div class="bill-input-wrapper">
+              <input
+                class="padding-xs text-right round-sm text-rg"
+                type="number"
+                value="142.55" />
+            </div>
           </div>
 
           <div class="[ calculator__tips ] [ flow-sm ]">
             <h2>Select Tip %</h2>
-            <div class="[ tip__percentages ] grid-2cols gap-sm">
+            <div class="tip__percentages">
               <button
-                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-rg ]">
                 5%
               </button>
               <button
-                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-rg ]">
                 10%
               </button>
               <button
-                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-rg ]">
                 15%
               </button>
               <button
-                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-rg ]">
                 25%
               </button>
               <button
-                class="[ tip__percentage-btn ] [ padding-xs round-sm text-md ]">
+                class="[ tip__percentage-btn ] [ padding-xs round-sm text-rg ]">
                 50%
               </button>
               <input
@@ -65,10 +67,12 @@
 
           <div class="[ calculator__people-num ] [ flow-xs ]">
             <h2>Number of People</h2>
-            <input
-              class="padding-xs text-right round-sm"
-              type="number"
-              value="5" />
+            <div class="people-input-wrapper">
+              <input
+                class="padding-xs text-right round-sm"
+                type="number"
+                value="5" />
+            </div>
           </div>
         </div>
 
@@ -80,7 +84,7 @@
               <span class="block">Tip Amount</span>
               <span class="text-xs block">/ person</span>
             </h2>
-            <div class="[ calculator__output-number ] [ text-lg ]">$4.27</div>
+            <div class="[ calculator__output-number ] [ text-md ]">$4.27</div>
           </div>
           <div
             class="[ calculator__total-text ] [ flex content-between items-center ]">
@@ -88,7 +92,7 @@
               <span class="block">Total</span>
               <span class="text-xs block">/ person</span>
             </h2>
-            <div class="[ calculator__output-number ] [ text-lg ]">$32.79</div>
+            <div class="[ calculator__output-number ] [ text-md ]">$32.79</div>
           </div>
           <button
             class="[ calculator__reset ] [ text-center text-uppercase padding-xs round-sm ]">
